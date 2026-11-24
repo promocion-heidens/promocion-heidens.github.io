@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cena de agradecimiento a nuestros maestros · Promoción HEIDENS 2026</title>
+<meta name="description" content="Jueves 26 de noviembre, 6:00 p.m. · Huerto «Mi pequeña herencia», Jorochito">
+<meta property="og:title" content="Cena de agradecimiento a nuestros maestros">
+<meta property="og:description" content="Promoción HEIDENS 2026 · Jueves 26 de noviembre, 6:00 p.m.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://promocion-heidens.github.io/">
+<meta property="og:image" content="https://promocion-heidens.github.io/fotos/grupo2.jpg">
+<meta name="theme-color" content="#0b2b27">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep:#0b2b27; --green:#12403a; --teal:#1f7a6d; --mint:#d9ebe4;
+    --cream:#f8f3e9; --paper:#fffdf8; --gold:#c9a35b; --gold-l:#e6cd95; --ink:#1d2a27;
+    --script:'Pinyon Script','Segoe Script','Lucida Handwriting',cursive;
+    --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--serif);color:var(--ink);background:var(--cream);font-size:19px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  html,body{overflow-x:clip}
+  .wrap{max-width:560px;margin:0 auto;position:relative;overflow:hidden}
+  section,header,footer{overflow:hidden}
+  .script{font-family:var(--script);font-weight:400;line-height:1.05}
+  .k{letter-spacing:.34em;text-transform:uppercase;font-size:13px}
+  .center{text-align:center}
+
+  /* blobs y manchas */
+  .blob{position:absolute;border-radius:42% 58% 63% 37%/45% 38% 62% 55%;filter:blur(2px);opacity:.55;animation:morph 16s ease-in-out infinite;pointer-events:none;z-index:0}
+  @keyframes morph{
+    0%,100%{border-radius:42% 58% 63% 37%/45% 38% 62% 55%;transform:translate(0,0) rotate(0)}
+    33%{border-radius:61% 39% 44% 56%/58% 51% 49% 42%;transform:translate(10px,-14px) rotate(8deg)}
+    66%{border-radius:37% 63% 52% 48%/39% 62% 38% 61%;transform:translate(-12px,8px) rotate(-6deg)}}
+  .ink{fill:none;stroke:var(--gold);stroke-width:1.2;stroke-linecap:round;stroke-dasharray:900;stroke-dashoffset:900;animation:draw 4s ease forwards .4s}
+  @keyframes draw{to{stroke-dashoffset:0}}
+
+  /* brillos dorados */
+  .flecks{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+  .flecks i{position:absolute;width:var(--s);height:var(--s);border-radius:50%;background:var(--gold-l);opacity:0;animation:float var(--d) ease-in-out infinite;box-shadow:0 0 8px rgba(230,205,149,.7)}
+  @keyframes float{0%{opacity:0;transform:translate(0,0)}25%{opacity:.85}100%{opacity:0;transform:translate(var(--x),var(--y))}}
+
+  /* música */
+  #ytWrap{position:fixed;width:1px;height:1px;left:-10px;bottom:0;opacity:0;pointer-events:none;overflow:hidden}
+  .music{position:fixed;right:16px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:120;width:54px;height:54px;
+    border:1px solid rgba(230,205,149,.85);background:rgba(11,43,39,.85);color:var(--gold-l);cursor:pointer;
+    border-radius:46% 54% 42% 58%/55% 45% 55% 45%;display:none;align-items:center;justify-content:center;gap:3px;
+    box-shadow:0 8px 24px rgba(0,0,0,.25);backdrop-filter:blur(6px);animation:morph2 9s ease-in-out infinite}
+  .music.show{display:flex}
+  .music .bars{display:none;align-items:flex-end;gap:2px;height:16px}
+  .music .bars i{width:3px;background:currentColor;border-radius:2px;animation:eq 1s ease-in-out infinite}
+  .music .bars i:nth-child(2){animation-delay:-.4s}.music .bars i:nth-child(3){animation-delay:-.7s}
+  .music.on .bars{display:flex}
+  .music:not(.on) svg{opacity:.75}
+  @keyframes eq{0%,100%{height:4px}50%{height:16px}}
+
+  /* apertura */
+  .opener{position:fixed;inset:0;z-index:200;background:radial-gradient(120% 90% at 50% 20%,#17504a 0%,var(--deep) 65%);color:var(--cream);
+    display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;transition:opacity 1s ease,visibility 1s,transform 1.2s ease}
+  .opener.gone{opacity:0;visibility:hidden;transform:scale(1.08)}
+  .opener .z{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
+  .seal{width:136px;height:136px;margin:26px 0 20px;display:flex;align-items:center;justify-content:center;flex-direction:column;
+    background:radial-gradient(circle at 35% 30%,#f2dca7,var(--gold) 55%,#9b7a39);color:var(--deep);
+    border-radius:47% 53% 44% 56%/52% 44% 56% 48%;box-shadow:0 14px 40px rgba(0,0,0,.35),inset 0 0 0 6px rgba(255,255,255,.18);animation:morph 10s ease-in-out infinite}
+  .seal b{font-family:var(--script);font-weight:400;font-size:44px;line-height:1}
+  .seal span{font-size:11px;letter-spacing:.28em}
+  .opener h1{font-size:clamp(46px,13vw,68px)}
+  .opener p{opacity:.85;max-width:300px;margin-top:8px;font-style:italic}
+  .opener button{margin-top:26px;background:rgba(255,255,255,.06);border:1px solid rgba(230,205,149,.75);color:#fff;font-family:var(--serif);
+    font-size:18px;letter-spacing:.12em;padding:14px 34px;border-radius:40px 16px 40px 16px;cursor:pointer;transition:all .5s}
+  .opener button:hover{border-radius:16px 40px 16px 40px;background:rgba(255,255,255,.14)}
+
+  /* portada */
+  .hero{position:relative;background:linear-gradient(180deg,var(--deep) 0%,var(--green) 70%,var(--green) 100%);color:var(--cream);padding:70px 22px 120px;overflow:hidden;text-align:center}
+  .hero .b1{width:320px;height:320px;background:var(--teal);top:-90px;left:-120px}
+  .hero .b2{width:260px;height:260px;background:#2c5f45;bottom:40px;right:-110px;animation-delay:-6s}
+  .hero .z{position:relative;z-index:2}
+  .hero h1{font-size:clamp(58px,17vw,92px);color:#fff;margin:14px 0 2px}
+  .hero h2{font-weight:400;font-style:italic;font-size:clamp(22px,6vw,28px);color:var(--gold-l)}
+  .frame{position:relative;margin:38px auto 0;width:min(92%,470px)}
+  .frame .pic{aspect-ratio:4/3;overflow:hidden;border-radius:58% 42% 47% 53%/44% 54% 46% 56%;animation:morph2 14s ease-in-out infinite;
+    box-shadow:0 22px 50px rgba(0,0,0,.4);border:3px solid rgba(230,205,149,.7)}
+  .frame .pic img{width:100%;height:100%;object-fit:cover}
+  @keyframes morph2{0%,100%{border-radius:58% 42% 47% 53%/44% 54% 46% 56%}50%{border-radius:44% 56% 58% 42%/56% 43% 57% 44%}}
+  .frame svg{position:absolute;inset:-18px;width:calc(100% + 36px);height:calc(100% + 36px);pointer-events:none}
+
+  .wave{display:block;width:100%;height:70px;margin-top:-69px;position:relative;z-index:3}
+  .wave.top{margin-top:0;margin-bottom:-1px}
+
+  section{position:relative;padding:64px 24px}
+  .h-script{font-family:var(--script);font-size:clamp(46px,12vw,62px);color:var(--green);text-align:center;line-height:1.1}
+  .sub{text-align:center;color:var(--teal);margin-top:4px}
+
+  /* mensaje */
+  .msg p{text-align:center;font-size:21px;max-width:440px;margin:18px auto 0}
+  .msg p em{color:var(--teal)}
+  .sprig{display:block;margin:0 auto 6px;width:120px;height:40px}
+
+  /* fecha */
+  .date{background:var(--paper);overflow:hidden}
+  .date .b3{width:280px;height:280px;background:var(--mint);top:30px;right:-130px}
+  .date .b4{width:220px;height:220px;background:#f1e2bf;bottom:20px;left:-110px;animation-delay:-8s}
+  .bigdate{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:16px;margin:26px 0 10px;color:var(--green)}
+  .bigdate .side{font-size:15px;letter-spacing:.3em;text-transform:uppercase;padding:8px 0;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);width:96px}
+  .bigdate .num{font-size:84px;line-height:1;font-weight:500}
+  .mes{text-align:center;font-size:17px;letter-spacing:.3em;text-transform:uppercase;color:var(--teal)}
+  .cal{position:relative;z-index:2;max-width:330px;margin:26px auto 0;display:grid;grid-template-columns:repeat(7,1fr);text-align:center;gap:4px;font-size:16px}
+  .cal .dn{font-size:12px;letter-spacing:.1em;color:var(--teal);text-transform:uppercase;padding-bottom:6px}
+  .cal .d{padding:6px 0;position:relative}
+  .cal .d.hit{color:#fff;font-weight:600}
+  .cal .d.hit::before{content:"";position:absolute;inset:-2px 2px;background:var(--green);border-radius:47% 53% 44% 56%/52% 44% 56% 48%;z-index:-1;animation:morph 8s ease-in-out infinite}
+  .cd{position:relative;z-index:2;display:flex;justify-content:center;gap:10px;margin-top:34px;flex-wrap:wrap}
+  .cd div{width:72px;padding:12px 0;background:var(--green);color:#fff;text-align:center;border-radius:40% 60% 55% 45%/50% 45% 55% 50%}
+  .cd div:nth-child(even){border-radius:58% 42% 45% 55%/45% 55% 45% 55%;background:var(--teal)}
+  .cd b{display:block;font-size:30px;font-weight:500;line-height:1}
+  .cd span{font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
+
+  /* lugar */
+  .place{background:var(--green);color:var(--cream);overflow:hidden;text-align:center}
+  .place .h-script{color:#fff}
+  .place .b5{width:300px;height:300px;background:var(--teal);top:-80px;left:-140px;opacity:.4}
+  .place .b6{width:240px;height:240px;background:#2c5f45;bottom:-60px;right:-90px;opacity:.5;animation-delay:-5s}
+  .card{position:relative;z-index:2;margin:26px auto 0;max-width:420px;padding:34px 24px 30px;background:rgba(255,255,255,.06);
+    border:1px solid rgba(230,205,149,.45);border-radius:46px 18px 46px 18px}
+  .card .ic{width:58px;height:58px;margin:0 auto 12px;color:var(--gold-l)}
+  .card h3{font-weight:500;font-size:26px;color:#fff;line-height:1.2}
+  .card .where{font-style:italic;color:var(--gold-l);margin-top:6px}
+  .card .when{margin-top:16px;font-size:18px}
+  .btn{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:13px 28px;text-decoration:none;font-size:17px;letter-spacing:.08em;
+    background:var(--gold);color:var(--deep);border-radius:30px 12px 30px 12px;transition:border-radius .5s,transform .3s;font-weight:600}
+  .btn:hover{border-radius:12px 30px 12px 30px;transform:translateY(-2px)}
+
+  /* galería */
+  .gal{background:var(--cream)}
+  .g{display:flex;flex-direction:column;gap:22px;margin-top:30px}
+  .g figure{overflow:hidden;aspect-ratio:3/2;cursor:zoom-in;box-shadow:0 14px 32px rgba(11,43,39,.2)}
+  .g figure:nth-child(3n+1){border-radius:46% 54% 38% 62%/30% 34% 66% 70%;width:96%}
+  .g figure:nth-child(3n+2){border-radius:28px 90px 28px 90px;width:92%;margin-left:auto}
+  .g figure:nth-child(3n){border-radius:60% 40% 55% 45%/40% 60% 40% 60%;width:94%;margin:0 auto}
+  .g img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+  .g figure:hover img{transform:scale(1.05)}
+
+  /* frase y cierre */
+  .quote{background:var(--paper);text-align:center}
+  .quote blockquote{font-size:clamp(25px,7vw,32px);font-style:italic;color:var(--green);max-width:430px;margin:0 auto;line-height:1.35}
+  .quote cite{display:block;margin-top:14px;font-style:normal;color:var(--teal);letter-spacing:.24em;text-transform:uppercase;font-size:13px}
+  .end{background:linear-gradient(180deg,var(--green),var(--deep));color:var(--cream);text-align:center;padding:80px 24px 90px;overflow:hidden}
+  .end .b7{width:300px;height:300px;background:var(--teal);top:-120px;right:-120px;opacity:.35}
+  .end .z{position:relative;z-index:2}
+  .end .script{font-size:clamp(58px,16vw,84px);color:#fff}
+  .end p{max-width:380px;margin:12px auto 0}
+  .end .sig{margin-top:26px;color:var(--gold-l)}
+
+  /* aparición */
+  .reveal.in{animation:rise 1.1s ease both}
+  @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+
+  /* foto ampliada */
+  .lb{position:fixed;inset:0;background:rgba(6,24,21,.92);z-index:300;display:none;align-items:center;justify-content:center;padding:18px}
+  .lb.open{display:flex}
+  .lb img{max-height:88vh;border-radius:18px}
+
+  @media (prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important}.ink{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+
+<div id="ytWrap" aria-hidden="true"><div id="ytMusic"></div></div>
+<button id="musicBtn" class="music" aria-label="Reproducir música">
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 3v10.6A4 4 0 1 0 14 17V7h5V3h-7z"/></svg>
+  <span class="bars"><i></i><i></i><i></i></span>
+</button>
+<div class="opener" id="opener">
+  <div class="flecks" data-n="26"></div>
+  <div class="z">
+    <div class="k">Promoción HEIDENS 2026</div>
+    <div class="seal"><b>H</b><span>2026</span></div>
+    <h1 class="script">Queridos maestros</h1>
+    <p>Tenemos algo especial para ustedes</p>
+    <button id="openBtn">Abrir invitación</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="blob b1"></div><div class="blob b2"></div>
+    <div class="flecks" data-n="18"></div>
+    <div class="z">
+      <div class="k" style="color:var(--gold-l)">Promoción HEIDENS 2026</div>
+      <h1 class="script">Cena de gratitud</h1>
+      <h2>para nuestros queridos maestros</h2>
+      <div class="frame">
+        <div class="pic"><img src="fotos/grupo2.jpg" alt="Promoción HEIDENS con sus maestros"></div>
+        <svg viewBox="0 0 400 300" preserveAspectRatio="none" aria-hidden="true">
+          <path class="ink" d="M30,150 C20,60 120,10 210,18 C320,28 392,90 380,170 C368,250 270,296 180,288 C80,280 40,230 30,150"/>
+        </svg>
+      </div>
+    </div>
+  </header>
+  <svg class="wave" viewBox="0 0 400 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C70,10 130,70 210,42 C290,14 340,58 400,30 L400,70 L0,70 Z" fill="#f8f3e9"/></svg>
+
+  <section class="msg">
+    <svg class="sprig" viewBox="0 0 120 40" aria-hidden="true"><path class="ink" d="M5,22 C30,4 50,36 60,20 C70,4 90,36 115,18"/><circle cx="60" cy="20" r="3" fill="#c9a35b"/></svg>
+    <div class="h-script reveal">Gracias</div>
+    <p class="reveal">Por cada enseñanza, cada consejo y cada día de paciencia. Ustedes fueron parte de nuestro camino y hoy queremos <em>celebrarlos a ustedes</em>.</p>
+    <p class="reveal">La <b>Promoción HEIDENS</b> tiene el honor de invitarle a compartir una cena especial en su honor.</p>
+  </section>
+
+  <svg class="wave top" viewBox="0 0 400 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0,30 C80,62 150,8 230,34 C300,56 350,20 400,38 L400,70 L0,70 Z" fill="#fffdf8"/></svg>
+  <section class="date">
+    <div class="blob b3"></div><div class="blob b4"></div>
+    <div class="h-script reveal" style="position:relative;z-index:2">Guarde la fecha</div>
+    <div class="bigdate reveal">
+      <div class="side">Jueves</div>
+      <div class="num">26</div>
+      <div class="side">6:00 pm</div>
+    </div>
+    <div class="mes reveal" style="position:relative;z-index:2">Noviembre · 2026</div>
+    <div class="cal reveal" id="cal"></div>
+    <div class="cd reveal" id="cd">
+      <div><b id="cdD">0</b><span>días</span></div>
+      <div><b id="cdH">0</b><span>horas</span></div>
+      <div><b id="cdM">0</b><span>min</span></div>
+      <div><b id="cdS">0</b><span>seg</span></div>
+    </div>
+  </section>
+
+  <svg class="wave top" viewBox="0 0 400 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0,44 C60,14 140,64 220,36 C300,10 350,52 400,28 L400,70 L0,70 Z" fill="#12403a"/></svg>
+  <section class="place">
+    <div class="blob b5"></div><div class="blob b6"></div>
+    <div class="flecks" data-n="12"></div>
+    <div class="h-script reveal" style="position:relative;z-index:2">¿Dónde?</div>
+    <div class="card reveal">
+      <svg class="ic" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M14 8v18c0 4 3 7 7 7v23M21 8v14M28 8v18c0 4-3 7-7 7"/>
+        <path d="M46 56V36c-5 0-8-6-8-14 0-8 3-14 8-14v48"/>
+      </svg>
+      <h3>Huerto «Mi pequeña herencia»</h3>
+      <div class="where">Jorochito</div>
+      <div class="when">Jueves 26 de noviembre · 6:00 p.m.</div>
+      <a class="btn" href="https://maps.app.goo.gl/Yhw7EhyhYW3y1vYe6" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        Ver ubicación
+      </a>
+    </div>
+  </section>
+  <svg class="wave top" viewBox="0 0 400 70" preserveAspectRatio="none" aria-hidden="true" style="background:#12403a"><path d="M0,30 C70,60 140,10 220,38 C290,62 350,22 400,40 L400,70 L0,70 Z" fill="#f8f3e9"/></svg>
+
+  <section class="gal">
+    <div class="h-script reveal">Nuestra promoción</div>
+    <div class="sub reveal">Todo esto también es obra suya</div>
+    <div class="g" id="gallery">
+      <figure class="reveal"><img src="fotos/grupo6.jpg" alt="Promoción HEIDENS con toga" loading="lazy"></figure>
+      <figure class="reveal"><img src="fotos/grupo3.jpg" alt="Promoción HEIDENS con uniforme" loading="lazy"></figure>
+      <figure class="reveal"><img src="fotos/grupo1.jpg" alt="Promoción HEIDENS en el salón" loading="lazy"></figure>
+      <figure class="reveal"><img src="fotos/grupo7.jpg" alt="Promoción HEIDENS con toga en el jardín" loading="lazy"></figure>
+      <figure class="reveal"><img src="fotos/grupo4.jpg" alt="Promoción HEIDENS en el jardín" loading="lazy"></figure>
+      <figure class="reveal"><img src="fotos/grupo5.jpg" alt="Promoción HEIDENS entre palmeras" loading="lazy"></figure>
+      <figure class="reveal"><img src="fotos/grupo9.jpg" alt="Toda la promoción HEIDENS" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="quote">
+    <blockquote class="reveal">«Un buen maestro enciende una luz que nunca se apaga.»</blockquote>
+    <cite class="reveal">Con cariño</cite>
+  </section>
+
+  <footer class="end">
+    <div class="blob b7"></div>
+    <div class="flecks" data-n="20"></div>
+    <div class="z">
+      <div class="script reveal">¡Los esperamos!</div>
+      <p class="reveal">Su presencia será el mejor regalo para cerrar esta etapa juntos.</p>
+      <div class="k sig reveal">Promoción HEIDENS 2026</div>
+    </div>
+  </footer>
+</div>
+
+<div class="lb" id="lb"><img alt=""></div>
+
+<script>
+const $=id=>document.getElementById(id);
+const EVENTO={fecha:'2026-11-26',hora:'18:00'};
+
+/* calendario */
+(()=>{
+  const [y,m,d]=EVENTO.fecha.split('-').map(Number);
+  const cal=$('cal');
+  ['Do','Lu','Ma','Mi','Ju','Vi','Sá'].forEach(n=>cal.insertAdjacentHTML('beforeend',`<div class="dn">${n}</div>`));
+  const first=new Date(y,m-1,1).getDay(), days=new Date(y,m,0).getDate();
+  for(let i=0;i<first;i++)cal.insertAdjacentHTML('beforeend','<div></div>');
+  for(let i=1;i<=days;i++)cal.insertAdjacentHTML('beforeend',`<div class="d${i===d?' hit':''}">${i}</div>`);
+})();
+
+/* cuenta regresiva */
+const meta=new Date(`${EVENTO.fecha}T${EVENTO.hora}:00-04:00`).getTime();
+const tick=()=>{
+  let t=Math.max(0,meta-Date.now())/1000;
+  const D=Math.floor(t/86400);t-=D*86400;const H=Math.floor(t/3600);t-=H*3600;const M=Math.floor(t/60);const S=Math.floor(t-M*60);
+  $('cdD').textContent=D;$('cdH').textContent=H;$('cdM').textContent=M;$('cdS').textContent=S;
+};
+tick();setInterval(tick,1000);
+
+/* brillos */
+document.querySelectorAll('.flecks').forEach(box=>{
+  for(let i=0;i<+box.dataset.n;i++){
+    const f=document.createElement('i');
+    f.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;--s:${(Math.random()*5+2).toFixed(1)}px;--d:${(Math.random()*8+6).toFixed(1)}s;--x:${(Math.random()*60-30).toFixed(0)}px;--y:${(Math.random()*-70-10).toFixed(0)}px;animation-delay:${(-Math.random()*8).toFixed(1)}s`;
+    box.appendChild(f);
+  }
+});
+
+/* apertura */
+document.body.style.overflow='hidden';
+$('openBtn').onclick=()=>{$('opener').classList.add('gone');document.body.style.overflow='';musica.play()};
+
+/* música de fondo (YouTube oculto) */
+const musica=(()=>{
+  const btn=$('musicBtn');let player=null,listo=false,quiere=false,sonando=false;
+  const pintar=()=>{btn.classList.toggle('on',sonando);btn.setAttribute('aria-label',sonando?'Pausar música':'Reproducir música')};
+  window.onYouTubeIframeAPIReady=()=>{
+    player=new YT.Player('ytMusic',{videoId:'vYczwffGwig',
+      playerVars:{autoplay:0,controls:0,loop:1,playlist:'vYczwffGwig',playsinline:1},
+      events:{
+        onReady:()=>{listo=true;player.setVolume(70);if(quiere)player.playVideo()},
+        onStateChange:e=>{sonando=e.data===YT.PlayerState.PLAYING||e.data===YT.PlayerState.BUFFERING;pintar()}
+      }});
+  };
+  const s=document.createElement('script');s.src='https://www.youtube.com/iframe_api';document.head.appendChild(s);
+  btn.onclick=()=>{if(sonando){quiere=false;player&&player.pauseVideo()}else api.play()};
+  const api={play(){quiere=true;btn.classList.add('show');if(listo)player.playVideo()}};
+  return api;
+})();
+
+/* aparición */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* foto ampliada */
+const lb=$('lb'),lbImg=lb.querySelector('img');
+document.querySelectorAll('#gallery img, .frame img').forEach(img=>img.addEventListener('click',()=>{lbImg.src=img.src;lb.classList.add('open')}));
+lb.addEventListener('click',e=>{if(e.target!==lbImg)lb.classList.remove('open')});
+</script>
+</body>
+</html>
