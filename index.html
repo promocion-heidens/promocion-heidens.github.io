@@ -326,8 +326,8 @@ const musica=(()=>{
   const btn=$('musicBtn');let player=null,listo=false,quiere=false,sonando=false;
   const pintar=()=>{btn.classList.toggle('on',sonando);btn.setAttribute('aria-label',sonando?'Pausar música':'Reproducir música')};
   window.onYouTubeIframeAPIReady=()=>{
-    player=new YT.Player('ytMusic',{videoId:'vYczwffGwig',
-      playerVars:{autoplay:0,controls:0,loop:1,playlist:'vYczwffGwig',playsinline:1},
+    player=new YT.Player('ytMusic',{videoId:'16xh0ba7k4A',
+      playerVars:{autoplay:0,controls:0,loop:1,playlist:'16xh0ba7k4A',playsinline:1},
       events:{
         onReady:()=>{listo=true;player.setVolume(70);if(quiere)player.playVideo()},
         onStateChange:e=>{sonando=e.data===YT.PlayerState.PLAYING||e.data===YT.PlayerState.BUFFERING;pintar()}
