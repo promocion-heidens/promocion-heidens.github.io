@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Graduación · Maite Córdoba Caraballo · Promoción HEIDENS</title>
+<meta name="description" content="Invitación a la graduación de Maite Córdoba Caraballo — Promoción HEIDENS">
+<meta property="og:title" content="Graduación · Maite Córdoba Caraballo">
+<meta property="og:description" content="Promoción HEIDENS · 19 de diciembre de 2026 · ¡Te espero!">
+<meta property="og:image" content="https://promocion-heidens.github.io/maite/fotos/portada.jpg">
+<meta property="og:url" content="https://promocion-heidens.github.io/maite/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Arapey&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1f2d5a; --navy-2:#2f4380; --navy-deep:#141d3d;
+    --cream:#f6f1ea; --paper:#fbf8f3;
+    --blush:#efcfcb; --blush-2:#d99c9c; --lilac:#b9bfe0; --sky:#a9c3d9;
+    --gold:#c49a52; --gold-2:#e3c486;
+    --ink:#1f2d5a; --muted:#5b6487;
+    --script:'Pinyon Script','Great Vibes','Edwardian Script ITC','Brush Script MT','Snell Roundhand',serif;
+    --serif:'Cormorant Garamond','Arapey',Georgia,serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--serif);color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{display:block;max-width:100%}
+
+  .page{max-width:760px;margin:0 auto;background:var(--paper);position:relative;overflow:hidden;box-shadow:0 0 80px rgba(31,45,90,.12)}
+
+  /* ---------- topbar ---------- */
+  .topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;color:#fff;font-size:15px;letter-spacing:.05em;padding:12px 20px;
+    display:flex;justify-content:space-between;align-items:center;
+    background:linear-gradient(100deg,rgba(31,45,90,.92),rgba(47,67,128,.88));backdrop-filter:blur(8px)}
+
+  /* ---------- abstract watercolor blobs ---------- */
+  .blobs{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+  .blob{position:absolute;border-radius:42% 58% 63% 37% / 41% 44% 56% 59%;filter:blur(28px);opacity:.55;
+    animation:morph 18s ease-in-out infinite alternate, drift 26s ease-in-out infinite alternate}
+  .b-blush{background:radial-gradient(circle at 30% 30%,#f6dcd8,var(--blush-2) 70%)}
+  .b-lilac{background:radial-gradient(circle at 40% 40%,#dfe2f4,var(--lilac) 70%)}
+  .b-sky{background:radial-gradient(circle at 50% 40%,#dcebf5,var(--sky) 70%)}
+  .b-gold{background:radial-gradient(circle at 50% 50%,#f6e6c4,var(--gold-2) 70%);opacity:.45}
+  .b-navy{background:radial-gradient(circle at 50% 50%,#3c5296,var(--navy-2) 70%);opacity:.6}
+  @keyframes morph{
+    0%{border-radius:42% 58% 63% 37% / 41% 44% 56% 59%}
+    50%{border-radius:63% 37% 38% 62% / 55% 61% 39% 45%}
+    100%{border-radius:35% 65% 52% 48% / 62% 35% 65% 38%}}
+  @keyframes drift{0%{transform:translate(0,0) rotate(0)}100%{transform:translate(18px,-22px) rotate(25deg)}}
+
+  /* watercolor paint stain (svg filter) */
+  .stain{position:absolute;pointer-events:none;z-index:0;opacity:.75}
+  .stain svg{width:100%;height:auto;overflow:visible}
+
+  /* gold flecks floating */
+  .flecks{position:absolute;inset:0;pointer-events:none;z-index:1}
+  .flecks i{position:absolute;width:var(--s);height:var(--s);border-radius:50% 40% 55% 45%;background:var(--gold);opacity:.7;
+    animation:float var(--d) ease-in-out infinite alternate}
+  @keyframes float{to{transform:translate(var(--x),var(--y)) rotate(160deg);opacity:.25}}
+
+  /* flowing wave separators */
+  .wave{position:absolute;left:0;right:0;height:90px;z-index:3;pointer-events:none;line-height:0}
+  .wave svg{width:100%;height:100%}
+  .wave.top{top:-1px}
+  .wave.bottom{bottom:-1px}
+
+  /* gold ink line that draws itself */
+  .ink{display:block;margin:0 auto;color:var(--gold);overflow:visible}
+  .ink path{stroke-dasharray:var(--len,900);stroke-dashoffset:var(--len,900);transition:stroke-dashoffset 2.6s ease}
+  .in .ink path,.ink.in path{stroke-dashoffset:0}
+
+  section,header{position:relative}
+  .z{position:relative;z-index:2}
+
+  /* ---------- hero ---------- */
+  .hero{padding:46px 20px 0;text-align:center;min-height:100svh;display:flex;flex-direction:column}
+  .hero .small{font-size:14px;letter-spacing:.4em;text-transform:uppercase;color:var(--muted)}
+  .hero h1{font-family:var(--script);font-weight:400;font-size:clamp(60px,15vw,104px);line-height:1;margin:12px 0 0;color:var(--navy)}
+  .hero .surname{font-size:clamp(17px,4.4vw,23px);letter-spacing:.34em;text-transform:uppercase;margin-top:4px}
+  .portrait{position:relative;width:min(84%,440px);margin:34px auto 0;aspect-ratio:4/5}
+  .portrait .shape{position:absolute;inset:0;overflow:hidden;border-radius:58% 42% 47% 53% / 46% 52% 48% 54%;
+    animation:morph2 14s ease-in-out infinite alternate;box-shadow:0 30px 60px -20px rgba(31,45,90,.45)}
+  .portrait img{width:100%;height:100%;object-fit:cover;object-position:62% 28%}
+  .portrait .ring{position:absolute;inset:-16px;border:1.5px solid var(--gold);opacity:.7;
+    border-radius:46% 54% 60% 40% / 52% 44% 56% 48%;animation:morph2 11s ease-in-out infinite alternate-reverse}
+  .portrait .ring.r2{inset:-30px;border-color:var(--blush-2);opacity:.45;animation-duration:17s}
+  @keyframes morph2{
+    0%{border-radius:58% 42% 47% 53% / 46% 52% 48% 54%}
+    50%{border-radius:44% 56% 61% 39% / 55% 43% 57% 45%}
+    100%{border-radius:52% 48% 38% 62% / 40% 58% 42% 60%}}
+  .hero .band{margin:56px -20px 0;padding:34px 30px 110px;background:var(--navy);color:#fff;
+    font-size:15px;letter-spacing:.13em;text-transform:uppercase;line-height:1.7;position:relative}
+
+  /* ---------- generic ---------- */
+  .pad{padding:80px 28px;text-align:center}
+  .lead{font-family:'Arapey',var(--serif);font-size:clamp(21px,5vw,27px);line-height:1.55;max-width:520px;margin:0 auto}
+  .script{font-family:var(--script);font-weight:400;color:var(--navy)}
+  .h-script{font-family:var(--script);font-weight:400;font-size:clamp(48px,11.5vw,74px);line-height:1.1}
+  .h-caps{font-size:clamp(19px,4.8vw,26px);letter-spacing:.24em;text-transform:uppercase;font-weight:500}
+  .label{color:var(--blush-2);letter-spacing:.2em;text-transform:uppercase;font-size:16px}
+  .promo{margin-top:40px}
+  .promo .h-script{font-size:clamp(62px,16vw,96px);background:linear-gradient(100deg,var(--navy),var(--navy-2) 40%,var(--gold) 70%,var(--navy));
+    -webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:sheen 7s ease-in-out infinite alternate}
+  @keyframes sheen{to{background-position:100% 0}}
+  .promo .year{letter-spacing:.45em;font-size:18px;color:var(--muted)}
+
+  /* ---------- save the date ---------- */
+  .save{background:var(--navy);color:#fff;padding:110px 22px 90px;text-align:center;overflow:hidden}
+  .save .h-script{color:#fff;font-size:clamp(74px,19vw,124px);line-height:.9}
+  .save .h-caps{color:var(--gold-2);margin-top:6px}
+  .duo{position:relative;height:360px;max-width:520px;margin:40px auto 10px}
+  .duo .p{position:absolute;overflow:hidden;box-shadow:0 20px 50px -10px rgba(0,0,0,.5)}
+  .duo .p img{width:100%;height:100%;object-fit:cover}
+  .duo .p1{left:4%;top:0;width:56%;height:88%;border-radius:62% 38% 55% 45% / 50% 46% 54% 50%;animation:morph2 16s ease-in-out infinite alternate}
+  .duo .p2{right:3%;bottom:0;width:46%;height:66%;border-radius:40% 60% 46% 54% / 58% 44% 56% 42%;animation:morph2 13s ease-in-out infinite alternate-reverse;border:5px solid var(--navy)}
+  .duo .p1 img{object-position:50% 30%}
+  .bigdate{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:34px}
+  .bigdate .n{font-size:clamp(90px,24vw,140px);line-height:.85;font-weight:500;
+    background:linear-gradient(160deg,#fff 30%,var(--gold-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .bigdate .side{text-align:left;letter-spacing:.28em;text-transform:uppercase;font-size:17px;line-height:1.9}
+  .bigdate .side b{display:block;font-weight:500;color:var(--gold-2)}
+
+  .cal{position:relative;margin:46px auto 0;max-width:470px;padding:32px 18px 26px;border-radius:44px 120px 44px 120px;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(4px)}
+  .cal .month{font-size:clamp(22px,6vw,28px);letter-spacing:.32em;text-transform:uppercase}
+  .cal .yr{font-size:14px;letter-spacing:.4em;opacity:.7;margin-bottom:16px}
+  .grid{display:grid;grid-template-columns:repeat(7,1fr);row-gap:6px}
+  .grid .dow{font-size:12px;letter-spacing:.14em;opacity:.6;padding-bottom:8px;text-transform:uppercase}
+  .grid .d{font-size:clamp(17px,4.4vw,22px);height:44px;display:flex;align-items:center;justify-content:center;position:relative;opacity:.85}
+  .grid .d.on{opacity:1;font-weight:600;color:var(--navy);z-index:0}
+  .grid .d.on::before{content:"";position:absolute;width:50px;height:50px;z-index:-1;
+    background:radial-gradient(circle at 35% 35%,#fbe9e6,var(--blush-2));border-radius:58% 42% 47% 53% / 46% 52% 48% 54%;
+    animation:morph2 6s ease-in-out infinite alternate, pulse 2.4s ease-in-out infinite}
+  @keyframes pulse{50%{transform:scale(1.12)}}
+
+  .countdown{margin-top:60px}
+  .countdown .h-script{font-size:clamp(58px,14vw,86px)}
+  .cd{display:flex;justify-content:center;gap:clamp(8px,3vw,18px);margin-top:16px}
+  .cd div{width:clamp(66px,19vw,92px);aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:rgba(255,255,255,.07);border:1px solid rgba(227,196,134,.45);border-radius:52% 48% 38% 62% / 40% 58% 42% 60%;
+    animation:morph2 9s ease-in-out infinite alternate}
+  .cd div:nth-child(2){animation-delay:-3s}.cd div:nth-child(3){animation-delay:-6s}.cd div:nth-child(4){animation-delay:-2s}
+  .cd b{font-weight:500;font-size:clamp(28px,8vw,42px);line-height:1}
+  .cd small{font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.75;margin-top:4px}
+  .cd-done{font-size:24px;letter-spacing:.06em}
+
+  /* ---------- itinerary ---------- */
+  .events{padding:120px 20px 110px}
+  .card{position:relative;z-index:2;max-width:480px;margin:0 auto;padding:64px 30px 48px;text-align:center;
+    background:rgba(255,255,255,.72);backdrop-filter:blur(10px);
+    border-radius:180px 60px 160px 70px / 120px 70px 140px 80px;
+    box-shadow:0 30px 60px -25px rgba(31,45,90,.35), inset 0 0 0 1px rgba(255,255,255,.8)}
+  .card.second{border-radius:60px 180px 70px 160px / 70px 120px 80px 140px}
+  .card .num{position:absolute;top:-34px;left:50%;transform:translateX(-50%);width:68px;height:68px;
+    display:flex;align-items:center;justify-content:center;font-family:var(--script);font-size:40px;color:#fff;
+    background:radial-gradient(circle at 35% 30%,var(--navy-2),var(--navy));border-radius:58% 42% 47% 53% / 46% 52% 48% 54%;
+    animation:morph2 7s ease-in-out infinite alternate;box-shadow:0 10px 24px -6px rgba(31,45,90,.5)}
+  .card .h-script{font-size:clamp(52px,12.5vw,72px)}
+  .card .h-caps{margin-top:-4px}
+  .card .icon{width:130px;margin:18px auto 6px;color:var(--navy-2)}
+  .card .when{display:inline-flex;gap:14px;align-items:center;margin-top:10px;font-size:20px}
+  .card .when .t{font-size:30px;font-weight:500}
+  .card .when .sep{width:40px;height:10px;color:var(--gold)}
+  .card .date-s{font-size:19px;color:var(--muted);letter-spacing:.05em;margin-top:4px}
+  .card .place{font-size:23px;line-height:1.35;margin-top:16px}
+  .card .place strong{font-weight:600}
+  .card .addr{font-size:18px;color:var(--muted);margin-top:4px}
+  .btn{display:inline-flex;align-items:center;gap:10px;margin-top:26px;color:#fff;text-decoration:none;
+    padding:14px 30px;font-size:17px;letter-spacing:.14em;text-transform:uppercase;
+    background:linear-gradient(120deg,var(--navy),var(--navy-2));border-radius:40px 18px 40px 18px;
+    box-shadow:0 10px 24px -6px rgba(31,45,90,.45);transition:transform .25s, border-radius .4s}
+  .btn:hover{transform:translateY(-2px);border-radius:18px 40px 18px 40px}
+  .btn svg{width:18px;height:18px}
+  .then{position:relative;z-index:2;max-width:470px;margin:30px auto;text-align:center}
+  .then p{font-family:'Arapey',var(--serif);font-size:22px;line-height:1.45}
+  .then .flow{width:90px;height:150px;margin:6px auto -10px}
+
+  /* ---------- gallery ---------- */
+  .gallery{background:var(--navy-deep);color:#fff;text-align:center;padding:120px 14px 120px;overflow:hidden}
+  .gallery .h-script{color:#fff}
+  .gallery .sub{letter-spacing:.24em;text-transform:uppercase;font-size:13px;opacity:.75;margin:4px 0 34px}
+  .g{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:640px;margin:0 auto;position:relative;z-index:2}
+  .g figure:nth-child(even){transform:translateY(34px)}
+    .g figure{overflow:hidden;cursor:zoom-in;transition:border-radius .8s ease, opacity 1.1s, transform 1.1s, filter 1.1s;aspect-ratio:3/4}
+  .g img{height:100%;object-fit:cover}
+  .g figure:nth-child(4n+1){border-radius:70px 20px 70px 20px}
+  .g figure:nth-child(4n+2){border-radius:20px 80px 20px 80px}
+  .g figure:nth-child(4n+3){border-radius:50% 50% 24px 24px}
+  .g figure:nth-child(4n+4){border-radius:24px 24px 50% 50%}
+  .g figure:hover{border-radius:30px}
+  .g img{width:100%;transition:transform .8s}
+  .g figure:hover img{transform:scale(1.06)}
+  .lightbox{position:fixed;inset:0;background:rgba(15,22,45,.95);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+  .lightbox.open{display:flex}
+  .lightbox img{max-height:90vh;max-width:100%;border-radius:24px}
+  .lightbox button{position:absolute;top:14px;right:18px;background:none;border:0;color:#fff;font-size:42px;cursor:pointer;line-height:1}
+
+  /* ---------- details ---------- */
+  .details{padding:120px 22px 100px}
+  .pebble{position:relative;z-index:2;max-width:500px;margin:0 auto;text-align:center;padding:54px 30px 48px;
+    background:rgba(255,255,255,.7);backdrop-filter:blur(8px);
+    border-radius:63% 37% 54% 46% / 40% 52% 48% 60%;box-shadow:0 26px 60px -28px rgba(31,45,90,.4)}
+  .pebble.b{border-radius:38% 62% 45% 55% / 55% 42% 58% 45%;margin-top:40px}
+  .pebble .h-script{font-size:clamp(46px,11vw,64px)}
+  .pebble .icon{width:110px;margin:14px auto 10px;color:var(--navy-2)}
+  .pebble h3{font-weight:600;font-size:25px}
+  .pebble p{font-size:20px;line-height:1.5;color:var(--muted);max-width:360px;margin:6px auto 0}
+
+  /* ---------- verse ---------- */
+  .verse{background:var(--navy);color:#fff;text-align:center;padding:120px 26px 130px;overflow:hidden}
+  .verse .q{position:relative;z-index:2;font-family:var(--script);font-size:clamp(38px,9vw,56px);line-height:1.25;max-width:600px;margin:0 auto}
+  .verse cite{position:relative;z-index:2;display:block;font-style:normal;margin-top:18px;font-size:21px;letter-spacing:.12em;color:var(--gold-2)}
+
+  /* ---------- closing ---------- */
+  .closing{padding:110px 24px 130px;text-align:center}
+  .closing .portrait{width:min(70%,340px);margin:0 auto 46px}
+  .closing .portrait img{object-position:50% 35%}
+  .closing .h-script{font-size:clamp(66px,16vw,106px);margin-top:12px}
+  .closing .sign{margin-top:16px;font-size:19px;letter-spacing:.26em;text-transform:uppercase}
+  footer{background:var(--navy);color:rgba(255,255,255,.7);text-align:center;font-size:13px;letter-spacing:.22em;padding:18px;text-transform:uppercase}
+
+  /* ---------- reveal ---------- */
+  .reveal.in{animation:rise 1.1s ease both}
+  @keyframes rise{from{opacity:.15;transform:translateY(26px);filter:blur(5px)}to{opacity:1;transform:none;filter:none}}
+
+  /* ---------- música ---------- */
+  #ytWrap{position:fixed;width:1px;height:1px;left:-10px;bottom:0;opacity:0;pointer-events:none;overflow:hidden}
+  .music{position:fixed;right:16px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:120;width:54px;height:54px;
+    border:1px solid rgba(227,196,134,.8);background:rgba(16,28,58,.82);color:#e3c486;cursor:pointer;
+    border-radius:46% 54% 42% 58%/55% 45% 55% 45%;display:none;align-items:center;justify-content:center;gap:3px;
+    box-shadow:0 8px 24px rgba(0,0,0,.25);backdrop-filter:blur(6px);animation:mblob 9s ease-in-out infinite}
+  .music.show{display:flex}
+  .music .bars{display:none;align-items:flex-end;gap:2px;height:16px}
+  .music .bars i{width:3px;background:currentColor;border-radius:2px;animation:eq 1s ease-in-out infinite}
+  .music .bars i:nth-child(2){animation-delay:-.4s}.music .bars i:nth-child(3){animation-delay:-.7s}
+  .music.on .bars{display:flex}
+  .music:not(.on) svg{opacity:.75}
+  @keyframes eq{0%,100%{height:4px}50%{height:16px}}
+  @keyframes mblob{0%,100%{border-radius:46% 54% 42% 58%/55% 45% 55% 45%}50%{border-radius:58% 42% 55% 45%/45% 58% 42% 55%}}
+
+  /* ---------- opener ---------- */
+  .opener{position:fixed;inset:0;z-index:200;background:var(--navy-deep);display:flex;flex-direction:column;align-items:center;justify-content:center;
+    color:#fff;text-align:center;padding:30px;overflow:hidden;transition:opacity 1s ease, visibility 1s, transform 1s ease}
+  .opener.gone{opacity:0;visibility:hidden;transform:scale(1.08)}
+  .opener .z{display:flex;flex-direction:column;align-items:center}
+  .opener .seal{width:130px;height:130px;margin:26px 0;display:flex;align-items:center;justify-content:center;
+    font-family:var(--script);font-size:62px;color:#fff;
+    background:radial-gradient(circle at 35% 30%,#f0d595,var(--gold) 55%,#94702f);
+    border-radius:58% 42% 47% 53% / 46% 52% 48% 54%;animation:morph2 5s ease-in-out infinite alternate;
+    box-shadow:0 14px 40px rgba(0,0,0,.45), inset 0 0 0 6px rgba(255,255,255,.18)}
+  .opener .who{font-family:var(--script);font-size:clamp(50px,13vw,76px);line-height:1}
+  .opener .k{letter-spacing:.38em;text-transform:uppercase;font-size:13px;opacity:.85}
+  .opener button{margin-top:22px;background:rgba(255,255,255,.06);border:1px solid rgba(227,196,134,.7);color:#fff;font-family:var(--serif);
+    font-size:17px;letter-spacing:.26em;text-transform:uppercase;padding:14px 32px;border-radius:40px 16px 40px 16px;cursor:pointer;transition:border-radius .4s}
+  .opener button:hover{border-radius:16px 40px 16px 40px;background:rgba(255,255,255,.12)}
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important}
+    .reveal{opacity:1;transform:none;filter:none;transition:none}
+    .ink path{stroke-dashoffset:0;transition:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- filtro acuarela reutilizable -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="watercolor" x="-30%" y="-30%" width="160%" height="160%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="4" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="38" result="d"/>
+      <feGaussianBlur in="d" stdDeviation="2.2" result="b"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="grain"/>
+      <feColorMatrix in="grain" type="saturate" values="0" result="g2"/>
+      <feComposite in="b" in2="g2" operator="arithmetic" k1="0.25" k2="0.85" k3="0" k4="0"/>
+    </filter>
+    <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="2"/><feDisplacementMap in="SourceGraphic" scale="3"/></filter>
+  </defs>
+</svg>
+
+<!-- ======== apertura ======== -->
+<div id="ytWrap" aria-hidden="true"><div id="ytMusic"></div></div>
+<button id="musicBtn" class="music" aria-label="Reproducir música">
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 3v10.6A4 4 0 1 0 14 17V7h5V3h-7z"/></svg>
+  <span class="bars"><i></i><i></i><i></i></span>
+</button>
+<div class="opener" id="opener">
+  <div class="blobs">
+    <div class="blob b-navy" style="width:420px;height:420px;left:-120px;top:-80px"></div>
+    <div class="blob b-blush" style="width:300px;height:300px;right:-90px;bottom:60px;opacity:.35"></div>
+    <div class="blob b-gold" style="width:240px;height:240px;left:30%;bottom:-90px;opacity:.25"></div>
+  </div>
+  <div class="flecks" data-n="22"></div>
+  <div class="z">
+    <div class="k">Promoción HEIDENS</div>
+    <div class="seal">M</div>
+    <div class="who">Maite</div>
+    <div class="k" style="margin-top:12px">te invita a su graduación</div>
+    <button id="openBtn">Abrir invitación</button>
+  </div>
+</div>
+
+<div class="page">
+  <div class="topbar"><span>Maite · HEIDENS</span><span id="topDate"></span></div>
+
+  <!-- ======== HERO ======== -->
+  <header class="hero">
+    <div class="blobs">
+      <div class="blob b-blush" style="width:340px;height:340px;left:-120px;top:40px"></div>
+      <div class="blob b-lilac" style="width:380px;height:380px;right:-140px;top:260px"></div>
+      <div class="blob b-gold" style="width:200px;height:200px;left:20%;top:520px"></div>
+    </div>
+    <div class="flecks" data-n="16"></div>
+    <div class="z">
+      <div class="small reveal">Mi graduación</div>
+      <h1 class="reveal">Maite</h1>
+      <div class="surname reveal">Córdoba Caraballo</div>
+      <div class="portrait reveal">
+        <div class="ring r2"></div><div class="ring"></div>
+        <div class="shape"><img src="fotos/portada.jpg" alt="Maite con toga y birrete"></div>
+      </div>
+    </div>
+    <div class="band z">
+      Con gran ilusión, quiero invitarte a ser parte de este logro tan importante de mi vida…
+      <div class="wave bottom" style="color:var(--paper)"><svg viewBox="0 0 1000 90" preserveAspectRatio="none"><path fill="currentColor" d="M0,60 C150,10 280,95 460,52 C640,10 760,88 1000,38 L1000,90 L0,90Z"/><path fill="currentColor" opacity=".45" d="M0,40 C180,90 320,0 520,40 C700,76 840,10 1000,56 L1000,90 L0,90Z"/></svg></div>
+    </div>
+  </header>
+
+  <!-- ======== INTRO ======== -->
+  <section class="pad">
+    <div class="stain" style="width:300px;right:-90px;top:-10px"><svg viewBox="0 0 300 300"><g filter="url(#watercolor)"><ellipse cx="150" cy="150" rx="110" ry="90" fill="#efcfcb" opacity=".8"/><ellipse cx="190" cy="120" rx="60" ry="50" fill="#d99c9c" opacity=".5"/></g></svg></div>
+    <div class="stain" style="width:260px;left:-100px;bottom:20px"><svg viewBox="0 0 300 300"><g filter="url(#watercolor)"><ellipse cx="150" cy="150" rx="100" ry="110" fill="#b9bfe0" opacity=".7"/><ellipse cx="120" cy="180" rx="50" ry="40" fill="#2f4380" opacity=".25"/></g></svg></div>
+    <div class="flecks" data-n="10"></div>
+    <div class="z">
+      <p class="lead reveal">Con la bendición de Dios y el amor de mi familia, culmino una etapa muy especial. Me encantaría que me acompañes en el acto de graduación y luego en la fiesta para celebrar juntos.</p>
+      <svg class="ink reveal" viewBox="0 0 260 60" width="240" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" style="--len:700;margin-top:28px">
+        <path d="M10,34 C40,6 70,54 100,30 C118,16 122,8 130,30 C138,52 142,44 160,30 C190,6 220,54 250,26"/>
+      </svg>
+      <div class="promo reveal">
+        <div class="label">Promoción</div>
+        <div class="h-script">Heidens</div>
+        <div class="year" id="promoYear"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== GUARDA LA FECHA ======== -->
+  <section class="save">
+    <div class="wave top" style="color:var(--paper)"><svg viewBox="0 0 1000 90" preserveAspectRatio="none"><path fill="currentColor" d="M0,0 L1000,0 L1000,40 C820,90 680,10 500,48 C320,86 160,14 0,56Z"/></svg></div>
+    <div class="blobs">
+      <div class="blob b-navy" style="width:420px;height:420px;right:-160px;top:120px"></div>
+      <div class="blob b-blush" style="width:260px;height:260px;left:-120px;top:520px;opacity:.22"></div>
+      <div class="blob b-gold" style="width:260px;height:260px;right:-60px;bottom:120px;opacity:.18"></div>
+    </div>
+    <div class="flecks" data-n="18"></div>
+    <div class="z">
+      <div class="h-script reveal">Guarda</div>
+      <div class="h-caps reveal">la fecha</div>
+
+      <div class="duo reveal">
+        <div class="p p1"><img src="fotos/duo1.jpg" alt="Maite con toga y birrete" loading="lazy"></div>
+        <div class="p p2"><img src="fotos/duo2.jpg" alt="Maite sonriendo" loading="lazy"></div>
+      </div>
+
+      <div class="bigdate reveal">
+        <div class="side"><span id="bdDow"></span><b id="bdMonth"></b></div>
+        <div class="n" id="bdDay"></div>
+        <div class="side"><span>Año</span><b id="bdYear"></b></div>
+      </div>
+
+      <div class="cal reveal">
+        <div class="month" id="calMonth"></div>
+        <div class="yr" id="calYear"></div>
+        <div class="grid" id="calGrid"></div>
+      </div>
+
+      <div class="countdown reveal">
+        <div class="h-script">Faltan</div>
+        <div class="cd" id="cd">
+          <div><b id="cdD">0</b><small>Días</small></div>
+          <div><b id="cdH">0</b><small>Horas</small></div>
+          <div><b id="cdM">0</b><small>Min</small></div>
+          <div><b id="cdS">0</b><small>Seg</small></div>
+        </div>
+      </div>
+    </div>
+    <div class="wave bottom" style="color:var(--paper)"><svg viewBox="0 0 1000 90" preserveAspectRatio="none"><path fill="currentColor" opacity=".4" d="M0,30 C200,80 360,0 560,44 C740,84 860,20 1000,50 L1000,90 L0,90Z"/><path fill="currentColor" d="M0,56 C170,20 330,90 520,56 C700,24 820,86 1000,44 L1000,90 L0,90Z"/></svg></div>
+  </section>
+
+  <!-- ======== ITINERARIO ======== -->
+  <section class="events">
+    <div class="stain" style="width:340px;left:-130px;top:60px"><svg viewBox="0 0 300 300"><g filter="url(#watercolor)"><ellipse cx="150" cy="150" rx="120" ry="100" fill="#a9c3d9" opacity=".65"/></g></svg></div>
+    <div class="stain" style="width:320px;right:-120px;top:42%"><svg viewBox="0 0 300 300"><g filter="url(#watercolor)"><ellipse cx="150" cy="150" rx="115" ry="100" fill="#efcfcb" opacity=".85"/><ellipse cx="170" cy="130" rx="50" ry="45" fill="#e3c486" opacity=".45"/></g></svg></div>
+    <div class="stain" style="width:300px;left:-90px;bottom:40px"><svg viewBox="0 0 300 300"><g filter="url(#watercolor)"><ellipse cx="150" cy="150" rx="110" ry="95" fill="#b9bfe0" opacity=".7"/></g></svg></div>
+    <div class="flecks" data-n="14"></div>
+
+    <div class="card reveal">
+      <div class="num">1</div>
+      <div class="h-script script">Acto</div>
+      <div class="h-caps">de graduación</div>
+      <svg class="icon" viewBox="0 0 160 110" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" filter="url(#rough)">
+        <path d="M80,12 C100,20 130,30 150,38 C130,46 100,58 80,66 C60,58 30,46 10,38 C30,30 60,20 80,12Z"/>
+        <path d="M38,50 C38,62 37,70 38,78 C56,96 104,96 122,78 C123,70 122,62 122,50"/>
+        <path d="M80,38 C104,40 132,44 146,40 C150,52 148,62 150,72"/>
+        <path d="M150,72 C144,80 142,88 146,94 M150,72 C156,80 158,88 154,94 M150,72 L150,96"/>
+      </svg>
+      <div class="date-s" data-fill="dateLong"></div>
+      <div class="when"><span class="t" data-fill="actoHora"></span></div>
+      <div class="place"><strong>Coliseo Polifuncional<br>de Jorochito</strong></div>
+      <div class="addr">Jorochito · Santa Cruz</div>
+      <a class="btn" href="https://maps.app.goo.gl/j6bdq93Q7nJY9mvb6" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+        Ver ubicación
+      </a>
+    </div>
+
+    <div class="then reveal">
+      <p>Terminando el acto de graduación,<br>te espero para celebrar en la fiesta</p>
+      <svg class="ink flow" viewBox="0 0 90 150" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="--len:400">
+        <path d="M45,4 C10,30 80,50 45,78 C14,102 70,116 45,140 M34,128 C40,134 44,138 45,142 C47,138 52,133 58,128"/>
+      </svg>
+    </div>
+
+    <div class="card second reveal">
+      <div class="num">2</div>
+      <div class="h-script script">Fiesta</div>
+      <div class="h-caps">de graduación</div>
+      <svg class="icon" viewBox="0 0 160 130" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" filter="url(#rough)">
+        <g transform="rotate(-14 56 70)">
+          <path d="M40,14 C50,13 62,13 72,14 C71,30 70,46 68,60 C66,70 46,70 44,60 C42,46 41,30 40,14Z"/>
+          <path d="M43,38 C52,42 60,36 70,40" stroke-width="1.3"/>
+          <path d="M56,68 C56,82 57,96 56,108 M42,110 C50,108 62,108 70,110"/>
+        </g>
+        <g transform="rotate(14 104 70)">
+          <path d="M88,14 C98,13 110,13 120,14 C119,30 118,46 116,60 C114,70 94,70 92,60 C90,46 89,30 88,14Z"/>
+          <path d="M90,38 C100,42 108,36 118,40" stroke-width="1.3"/>
+          <path d="M104,68 C104,82 105,96 104,108 M90,110 C98,108 110,108 118,110"/>
+        </g>
+        <path d="M70,8 C72,4 74,2 76,0 M82,6 C82,3 82,1 83,-2 M92,8 C91,4 89,2 88,0" stroke-width="1.5"/>
+        <circle cx="56" cy="28" r="1.8" fill="currentColor" stroke="none"/><circle cx="104" cy="26" r="1.8" fill="currentColor" stroke="none"/>
+        <circle cx="62" cy="44" r="1.3" fill="currentColor" stroke="none"/><circle cx="100" cy="46" r="1.3" fill="currentColor" stroke="none"/>
+      </svg>
+      <div class="date-s" data-fill="dateLong"></div>
+      <div class="when"><span class="t" data-fill="fiestaHora"></span></div>
+      <div class="place"><strong>Fiesta de graduación de<br>Maite Córdoba Caraballo</strong></div>
+      <div class="addr">Jorochito · Santa Cruz</div>
+      <a class="btn" href="https://maps.app.goo.gl/xu1b9qFzJ9bj5smP9" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+        Ver ubicación
+      </a>
+    </div>
+  </section>
+
+  <!-- ======== GALERÍA ======== -->
+  <section class="gallery">
+    <div class="wave top" style="color:var(--paper)"><svg viewBox="0 0 1000 90" preserveAspectRatio="none"><path fill="currentColor" d="M0,0 L1000,0 L1000,50 C840,10 700,86 500,46 C300,6 160,80 0,40Z"/></svg></div>
+    <div class="blobs">
+      <div class="blob b-navy" style="width:380px;height:380px;left:-150px;top:180px;opacity:.5"></div>
+      <div class="blob b-blush" style="width:260px;height:260px;right:-110px;top:50%;opacity:.18"></div>
+    </div>
+    <div class="flecks" data-n="14"></div>
+    <div class="z">
+      <div class="h-script reveal">Mis recuerdos</div>
+      <div class="sub">Una etapa que termina · un sueño que comienza</div>
+    </div>
+    <div class="g" id="gallery">
+      <figure class="reveal"><img src="fotos/foto1.jpg" alt="Maite con su amiga, con toga y birrete" loading="lazy"></figure>
+      <figure class="reveal"><img src="fotos/foto2.jpg" alt="Maite con su toga" loading="lazy"></figure>
+      <figure class="reveal"><img src="fotos/foto3.jpg" alt="Maite con sus compañeras de promoción" loading="lazy"></figure>
+      <figure class="reveal"><img src="fotos/foto4.jpg" alt="Maite lanzando su birrete" loading="lazy"></figure>
+      <figure class="reveal"><img src="fotos/foto5.jpg" alt="Maite y sus amigas con toga" loading="lazy"></figure>
+      <figure class="reveal"><img src="fotos/foto6.jpg" alt="Maite abrazada a su amiga" loading="lazy"></figure>
+      <figure class="reveal"><img src="fotos/foto7.jpg" alt="Maite con sus compañeras" loading="lazy"></figure>
+      <figure class="reveal"><img src="fotos/foto8.jpg" alt="Maite con toga en el jardín" loading="lazy"></figure>
+      <figure class="reveal"><img src="fotos/foto9.jpg" alt="Maite con sus amigas" loading="lazy"></figure>
+      <figure class="reveal"><img src="fotos/foto10.jpg" alt="Maite sonriendo" loading="lazy"></figure>
+    </div>
+    <div class="wave bottom" style="color:var(--paper)"><svg viewBox="0 0 1000 90" preserveAspectRatio="none"><path fill="currentColor" d="M0,50 C180,10 340,86 540,46 C720,10 860,76 1000,40 L1000,90 L0,90Z"/></svg></div>
+  </section>
+
+  <!-- ======== DETALLES ======== -->
+  <section class="details">
+    <div class="stain" style="width:320px;right:-110px;top:20px"><svg viewBox="0 0 300 300"><g filter="url(#watercolor)"><ellipse cx="150" cy="150" rx="115" ry="100" fill="#efcfcb" opacity=".85"/></g></svg></div>
+    <div class="stain" style="width:340px;left:-130px;bottom:0"><svg viewBox="0 0 300 300"><g filter="url(#watercolor)"><ellipse cx="150" cy="150" rx="120" ry="105" fill="#a9c3d9" opacity=".6"/><ellipse cx="180" cy="120" rx="50" ry="40" fill="#e3c486" opacity=".4"/></g></svg></div>
+    <div class="flecks" data-n="10"></div>
+
+    <div class="pebble reveal">
+      <div class="h-script script">Vestimenta</div>
+      <svg class="icon" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" filter="url(#rough)">
+        <path d="M40,14 C42,20 46,22 48,22 C50,22 52,20 52,14 C55,18 57,20 58,22 C55,26 53,30 52,34 C56,56 58,80 62,104 C46,108 30,108 14,104 C20,80 28,56 36,34 C34,30 32,26 30,22 C33,20 37,16 40,14Z"/>
+        <path d="M82,14 C86,15 92,15 96,14 C100,17 103,19 104,22 C106,36 106,50 106,62 L100,62 C100,76 101,90 100,104 L90,104 L89,70 L88,104 L78,104 C77,90 78,76 78,62 L72,62 C72,50 73,36 74,22 C76,19 79,17 82,14Z"/>
+        <path d="M82,14 C85,20 87,26 89,30 C91,26 93,20 96,14 M89,30 L89,60"/>
+      </svg>
+      <h3>Formal</h3>
+      <p>Vístete elegante para celebrar este gran día conmigo.</p>
+    </div>
+
+    <div class="pebble b reveal">
+      <div class="h-script script">Sugerencia de regalo</div>
+      <svg class="icon" viewBox="0 0 120 110" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" filter="url(#rough)">
+        <path d="M18,46 C40,44 80,44 102,46 C103,64 103,84 102,102 C80,104 40,104 18,102 C17,84 17,64 18,46Z"/>
+        <path d="M12,32 C44,29 76,29 108,32 L108,46 C76,48 44,48 12,46Z"/>
+        <path d="M60,30 C61,54 59,80 60,102"/>
+        <path d="M60,30 C50,10 26,10 30,22 C33,30 50,30 60,30 C70,30 87,30 90,22 C94,10 70,10 60,30Z"/>
+      </svg>
+      <p style="color:var(--ink);font-size:22px">El mejor regalo es tu presencia.</p>
+      <p>Si deseas obsequiarme algo, con mucho cariño lo recibiré en la fiesta.</p>
+    </div>
+  </section>
+
+  <!-- ======== VERSÍCULO ======== -->
+  <section class="verse">
+    <div class="wave top" style="color:var(--paper)"><svg viewBox="0 0 1000 90" preserveAspectRatio="none"><path fill="currentColor" d="M0,0 L1000,0 L1000,36 C820,86 640,6 460,46 C280,86 140,20 0,52Z"/></svg></div>
+    <div class="blobs">
+      <div class="blob b-navy" style="width:360px;height:360px;left:-140px;top:30px"></div>
+      <div class="blob b-gold" style="width:240px;height:240px;right:-80px;bottom:30px;opacity:.2"></div>
+    </div>
+    <div class="flecks" data-n="12"></div>
+    <div class="q reveal">“Todo lo puedo en Cristo que me fortalece”</div>
+    <cite>Filipenses 4:13</cite>
+    <div class="wave bottom" style="color:var(--paper)"><svg viewBox="0 0 1000 90" preserveAspectRatio="none"><path fill="currentColor" d="M0,44 C200,86 340,10 540,50 C720,86 860,16 1000,52 L1000,90 L0,90Z"/></svg></div>
+  </section>
+
+  <!-- ======== CIERRE ======== -->
+  <section class="closing">
+    <div class="blobs">
+      <div class="blob b-blush" style="width:320px;height:320px;right:-120px;top:40px"></div>
+      <div class="blob b-lilac" style="width:340px;height:340px;left:-140px;bottom:40px"></div>
+    </div>
+    <div class="flecks" data-n="14"></div>
+    <div class="z">
+      <div class="portrait reveal">
+        <div class="ring"></div>
+        <div class="shape"><img src="fotos/final.jpg" alt="Maite con su toga" loading="lazy"></div>
+      </div>
+      <p class="lead reveal">Gracias por acompañarme en este momento tan importante…</p>
+      <div class="h-script script reveal">¡Te espero!</div>
+      <svg class="ink reveal" viewBox="0 0 260 40" width="200" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" style="--len:600">
+        <path d="M10,22 C50,4 90,36 130,20 C170,4 210,36 250,18"/>
+      </svg>
+      <div class="sign">Maite Córdoba Caraballo</div>
+      <div style="margin-top:6px;letter-spacing:.3em;color:var(--muted)">Promoción HEIDENS</div>
+    </div>
+  </section>
+
+  <footer>Con cariño · Maite</footer>
+</div>
+
+<div class="lightbox" id="lb"><button aria-label="Cerrar">×</button><img alt=""></div>
+
+<script>
+/* ============================================================
+   DATOS DEL EVENTO — CAMBIA SOLO ESTAS LÍNEAS
+   ============================================================ */
+const EVENTO = {
+  fecha:      '2026-12-19',   // AAAA-MM-DD
+  actoHora:   '17:00',        // acto de graduación (24 h)
+  fiestaHora: '19:00',        // fiesta (24 h)
+  promoAnio:  '2026'
+};
+/* ============================================================ */
+
+const MESES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const DIAS=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+const [Y,M,D]=EVENTO.fecha.split('-').map(Number);
+const target=new Date(`${EVENTO.fecha}T${EVENTO.actoHora}:00`);
+const fmtHora=h=>{let [hh,mm]=h.split(':').map(Number);const ap=hh>=12?'p.m.':'a.m.';hh=hh%12||12;return `${hh}:${String(mm).padStart(2,'0')} ${ap}`};
+const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+const dateLong=`${cap(DIAS[target.getDay()])} ${D} de ${MESES[M-1]} de ${Y}`;
+const $=id=>document.getElementById(id);
+
+$('promoYear').textContent=EVENTO.promoAnio;
+$('topDate').textContent=`${String(D).padStart(2,'0')}.${String(M).padStart(2,'0')}.${Y}`;
+$('bdDow').textContent=DIAS[target.getDay()];
+$('bdMonth').textContent=MESES[M-1];
+$('bdDay').textContent=D;
+$('bdYear').textContent=Y;
+document.querySelectorAll('[data-fill="dateLong"]').forEach(e=>e.textContent=dateLong);
+document.querySelectorAll('[data-fill="actoHora"]').forEach(e=>e.textContent=fmtHora(EVENTO.actoHora));
+document.querySelectorAll('[data-fill="fiestaHora"]').forEach(e=>e.textContent=fmtHora(EVENTO.fiestaHora));
+
+/* calendario */
+$('calMonth').textContent=MESES[M-1];
+$('calYear').textContent=Y;
+const grid=$('calGrid');
+['Lu','Ma','Mi','Ju','Vi','Sá','Do'].forEach(d=>grid.insertAdjacentHTML('beforeend',`<div class="dow">${d}</div>`));
+const first=(new Date(Y,M-1,1).getDay()+6)%7, days=new Date(Y,M,0).getDate();
+for(let i=0;i<first;i++)grid.insertAdjacentHTML('beforeend','<div></div>');
+for(let d=1;d<=days;d++)grid.insertAdjacentHTML('beforeend',`<div class="d${d===D?' on':''}">${d}</div>`);
+
+/* cuenta regresiva */
+function tick(){
+  let s=Math.max(0,Math.floor((target-new Date())/1000));
+  if(s===0){$('cd').innerHTML='<div class="cd-done" style="width:auto;aspect-ratio:auto;padding:18px 28px">¡Hoy es el gran día!</div>';return}
+  const d=Math.floor(s/86400);s%=86400;const h=Math.floor(s/3600);s%=3600;const m=Math.floor(s/60);s%=60;
+  $('cdD').textContent=d;$('cdH').textContent=h;$('cdM').textContent=m;$('cdS').textContent=s;
+  setTimeout(tick,1000);
+}
+tick();
+
+/* destellos dorados flotantes */
+document.querySelectorAll('.flecks').forEach(box=>{
+  const n=+box.dataset.n||10;
+  for(let i=0;i<n;i++){
+    const f=document.createElement('i');
+    f.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;--s:${(Math.random()*5+2).toFixed(1)}px;--d:${(Math.random()*8+6).toFixed(1)}s;--x:${(Math.random()*60-30).toFixed(0)}px;--y:${(Math.random()*-70-10).toFixed(0)}px;animation-delay:${(-Math.random()*8).toFixed(1)}s`;
+    box.appendChild(f);
+  }
+});
+
+/* apertura */
+document.body.style.overflow='hidden';
+$('openBtn').onclick=()=>{$('opener').classList.add('gone');document.body.style.overflow='';musica.play()};
+
+/* música de fondo (YouTube oculto) */
+const musica=(()=>{
+  const btn=$('musicBtn');let player=null,listo=false,quiere=false,sonando=false;
+  const pintar=()=>{btn.classList.toggle('on',sonando);btn.setAttribute('aria-label',sonando?'Pausar música':'Reproducir música')};
+  window.onYouTubeIframeAPIReady=()=>{
+    player=new YT.Player('ytMusic',{videoId:'vYczwffGwig',
+      playerVars:{autoplay:0,controls:0,loop:1,playlist:'vYczwffGwig',playsinline:1,modestbranding:1},
+      events:{
+        onReady:()=>{listo=true;player.setVolume(70);if(quiere)player.playVideo()},
+        onStateChange:e=>{sonando=e.data===YT.PlayerState.PLAYING||e.data===YT.PlayerState.BUFFERING;pintar()}
+      }});
+  };
+  const s=document.createElement('script');s.src='https://www.youtube.com/iframe_api';document.head.appendChild(s);
+  btn.onclick=()=>{if(sonando){quiere=false;player&&player.pauseVideo()}else api.play()};
+  const api={play(){quiere=true;btn.classList.add('show');if(listo)player.playVideo()}};
+  return api;
+})();
+
+/* aparición al hacer scroll */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* galería ampliada */
+const lb=$('lb'), lbImg=lb.querySelector('img');
+document.querySelectorAll('#gallery img').forEach(img=>img.addEventListener('click',()=>{lbImg.src=img.src;lb.classList.add('open')}));
+lb.addEventListener('click',e=>{if(e.target!==lbImg)lb.classList.remove('open')});
+</script>
+</body>
+</html>
