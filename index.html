@@ -166,6 +166,57 @@
   .lb.open{display:flex}
   .lb img{max-height:88vh;border-radius:18px}
 
+
+  /* ====== más color, decoración y animación ====== */
+  body{background:#0b2b27}
+  .msg{background:linear-gradient(180deg,#e3efe8,#cfe4d9)}
+  .date{background:linear-gradient(180deg,#f6ecd2,#ead8ab)}
+  .date .b3{background:#cfe4d9;opacity:.7}.date .b4{background:#fff3d6;opacity:.7}
+  .gal{background:linear-gradient(180deg,#d7e9e0,#b9d6c9)}
+  .quote{background:linear-gradient(135deg,#f1dfb2,#d9b874 55%,#c9a35b);padding:80px 24px}
+  .quote blockquote{color:#0b2b27}
+  .quote cite{color:#12403a}
+  :is(.msg,.date,.gal,.quote)>:not(.blob):not(.deco):not(.flecks){position:relative;z-index:2}
+  .msg>.deco,.date>.deco,.gal>.deco,.quote>.deco{position:absolute;inset:0;z-index:1}
+  /* títulos con brillo dorado en movimiento */
+  .msg .h-script,.date .h-script,.gal .h-script{background:linear-gradient(100deg,#12403a 0%,#1f7a6d 30%,#c9a35b 48%,#f3dda6 52%,#1f7a6d 70%,#12403a 100%);
+    background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+  @keyframes shine{from{background-position:120% 0}to{background-position:-130% 0}}
+  .bigdate .num{background:linear-gradient(100deg,#12403a 20%,#c9a35b 45%,#f3dda6 50%,#12403a 75%);background-size:250% 100%;
+    -webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite}
+  /* globos / esferas que flotan */
+  .deco{pointer-events:none;overflow:hidden}
+  .deco .ball{position:absolute;border-radius:50%;animation:bob var(--d,12s) ease-in-out infinite alternate;animation-delay:var(--dl,0s)}
+  @keyframes bob{from{transform:translate(0,0) scale(1)}to{transform:translate(var(--x,20px),var(--y,-40px)) scale(1.12)}}
+  .ball.gold{background:radial-gradient(circle at 32% 28%,#fff4d6,#e6cd95 40%,#c9a35b 70%,#8f6d32);box-shadow:inset -6px -8px 16px rgba(0,0,0,.18),0 10px 24px rgba(0,0,0,.12)}
+  .ball.emerald{background:radial-gradient(circle at 32% 28%,#bfe9dc,#2f9a86 45%,#12403a 85%);box-shadow:inset -6px -8px 16px rgba(0,0,0,.25),0 10px 24px rgba(0,0,0,.15)}
+  .ball.pearl{background:radial-gradient(circle at 32% 28%,#ffffff,#f3ede0 50%,#cfc4ad 90%);box-shadow:inset -6px -8px 16px rgba(0,0,0,.12)}
+  .deco .leaf{position:absolute;width:var(--w,46px);color:var(--c,#1f7a6d);opacity:.55;animation:sway2 var(--d,9s) ease-in-out infinite alternate;transform-origin:20% 90%}
+  @keyframes sway2{from{transform:rotate(calc(var(--r,0deg) - 10deg))}to{transform:rotate(calc(var(--r,0deg) + 10deg)) translateY(-8px)}}
+  .deco .star{position:absolute;width:14px;height:14px;color:#c9a35b;animation:twinkle var(--d,3s) ease-in-out infinite;animation-delay:var(--dl,0s)}
+  @keyframes twinkle{0%,100%{opacity:.2;transform:scale(.6) rotate(0)}50%{opacity:1;transform:scale(1.15) rotate(45deg)}}
+  /* cuenta regresiva que late */
+  .cd div{animation:pulse 2.4s ease-in-out infinite;box-shadow:0 10px 22px -8px rgba(11,43,39,.5)}
+  .cd div:nth-child(2){animation-delay:.3s}.cd div:nth-child(3){animation-delay:.6s}.cd div:nth-child(4){animation-delay:.9s}
+  @keyframes pulse{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+  /* tarjeta del lugar con brillo y botón con destello */
+  .card{background:linear-gradient(160deg,rgba(255,255,255,.1),rgba(255,255,255,.03));box-shadow:0 0 0 1px rgba(230,205,149,.2),0 0 40px rgba(230,205,149,.15);animation:glow 4s ease-in-out infinite}
+  @keyframes glow{0%,100%{box-shadow:0 0 0 1px rgba(230,205,149,.2),0 0 30px rgba(230,205,149,.1)}50%{box-shadow:0 0 0 1px rgba(230,205,149,.5),0 0 50px rgba(230,205,149,.3)}}
+  .btn{position:relative;overflow:hidden}
+  .btn::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent);transform:skewX(-20deg);animation:sweep 3.5s ease-in-out infinite}
+  @keyframes sweep{0%,60%{left:-60%}100%{left:130%}}
+  /* galería con marco dorado animado y fotos que flotan */
+  @property --a{syntax:"<angle>";initial-value:0deg;inherits:false}
+  @keyframes spin{to{--a:360deg}}
+  .g figure{padding:5px;background:conic-gradient(from var(--a),#f3dda6,#c9a35b,#1f7a6d,#fff4d6,#c9a35b,#f3dda6);animation:spin 7s linear infinite, drift 7s ease-in-out infinite alternate;
+    box-shadow:0 18px 36px -12px rgba(11,43,39,.5)}
+  .g figure:nth-child(even){animation-duration:9s,8s;animation-direction:normal,alternate-reverse}
+  .g figure img{border-radius:inherit}
+  @keyframes drift{from{transform:translateY(0) rotate(-1deg)}to{transform:translateY(-8px) rotate(1deg)}}
+  .g figure.reveal.in{animation:spin 7s linear infinite, drift 7s ease-in-out infinite alternate}
+  /* marco de portada con brillo */
+  .frame .pic{border:0;padding:4px;background:conic-gradient(from var(--a),#f3dda6,#c9a35b,#fff4d6,#1f7a6d,#f3dda6);animation:morph2 14s ease-in-out infinite, spin 6s linear infinite}
+  .frame .pic img{border-radius:inherit}
   @media (prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important}.ink{stroke-dashoffset:0}}
 </style>
 </head>
@@ -204,7 +255,7 @@
       </div>
     </div>
   </header>
-  <svg class="wave" viewBox="0 0 400 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C70,10 130,70 210,42 C290,14 340,58 400,30 L400,70 L0,70 Z" fill="#f8f3e9"/></svg>
+  <svg class="wave" viewBox="0 0 400 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C70,10 130,70 210,42 C290,14 340,58 400,30 L400,70 L0,70 Z" fill="#e3efe8"/></svg>
 
   <section class="msg">
     <svg class="sprig" viewBox="0 0 120 40" aria-hidden="true"><path class="ink" d="M5,22 C30,4 50,36 60,20 C70,4 90,36 115,18"/><circle cx="60" cy="20" r="3" fill="#c9a35b"/></svg>
@@ -213,7 +264,7 @@
     <p class="reveal">La <b>Promoción HEIDENS</b> tiene el honor de invitarle a compartir una cena especial en su honor.</p>
   </section>
 
-  <svg class="wave top" viewBox="0 0 400 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0,30 C80,62 150,8 230,34 C300,56 350,20 400,38 L400,70 L0,70 Z" fill="#fffdf8"/></svg>
+  <svg class="wave top" style="background:#cfe4d9" viewBox="0 0 400 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0,30 C80,62 150,8 230,34 C300,56 350,20 400,38 L400,70 L0,70 Z" fill="#f6ecd2"/></svg>
   <section class="date">
     <div class="blob b3"></div><div class="blob b4"></div>
     <div class="h-script reveal" style="position:relative;z-index:2">Guarde la fecha</div>
@@ -232,7 +283,7 @@
     </div>
   </section>
 
-  <svg class="wave top" viewBox="0 0 400 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0,44 C60,14 140,64 220,36 C300,10 350,52 400,28 L400,70 L0,70 Z" fill="#12403a"/></svg>
+  <svg class="wave top" style="background:#ead8ab" viewBox="0 0 400 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0,44 C60,14 140,64 220,36 C300,10 350,52 400,28 L400,70 L0,70 Z" fill="#12403a"/></svg>
   <section class="place">
     <div class="blob b5"></div><div class="blob b6"></div>
     <div class="flecks" data-n="12"></div>
@@ -251,7 +302,7 @@
       </a>
     </div>
   </section>
-  <svg class="wave top" viewBox="0 0 400 70" preserveAspectRatio="none" aria-hidden="true" style="background:#12403a"><path d="M0,30 C70,60 140,10 220,38 C290,62 350,22 400,40 L400,70 L0,70 Z" fill="#f8f3e9"/></svg>
+  <svg class="wave top" style="background:#12403a" viewBox="0 0 400 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0,30 C70,60 140,10 220,38 C290,62 350,22 400,40 L400,70 L0,70 Z" fill="#d7e9e0"/></svg>
 
   <section class="gal">
     <div class="h-script reveal">Nuestra promoción</div>
@@ -316,6 +367,25 @@ document.querySelectorAll('.flecks').forEach(box=>{
     box.appendChild(f);
   }
 });
+
+
+/* decoración: globos, hojas y estrellas */
+(()=>{
+  const leaf='<svg viewBox="0 0 60 60" fill="currentColor"><path d="M8 52C10 26 26 8 54 6 52 32 36 50 8 52Z"/><path d="M8 52 40 20" stroke="rgba(255,255,255,.5)" stroke-width="1.5" fill="none"/></svg>';
+  const star='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg>';
+  const R=(a,b)=>a+Math.random()*(b-a);
+  const cfg={msg:["gold","emerald","pearl","gold"],date:["emerald","gold","pearl","emerald","gold"],gal:["gold","pearl","emerald","gold","pearl","emerald"],quote:["emerald","pearl","emerald"]};
+  Object.entries(cfg).forEach(([cls,balls])=>{
+    const sec=document.querySelector("section."+cls);if(!sec)return;
+    const d=document.createElement("div");d.className="deco";sec.prepend(d);
+    balls.forEach((t,i)=>{const b=document.createElement("i");b.className="ball "+t;const s=R(34,74);const left=i%2?R(88,97):R(-12,0);
+      b.style.cssText=`width:${s}px;height:${s}px;left:${left}%;top:${R(4,88)}%;--d:${R(9,16).toFixed(1)}s;--dl:${(-R(0,8)).toFixed(1)}s;--x:${R(-30,30).toFixed(0)}px;--y:${R(-50,-15).toFixed(0)}px;opacity:${R(.55,.85).toFixed(2)}`;d.appendChild(b)});
+    for(let i=0;i<3;i++){const l=document.createElement("i");l.className="leaf";l.innerHTML=leaf;
+      l.style.cssText=`left:${i%2?R(80,92):R(0,10)}%;top:${R(10,85)}%;--w:${R(34,58).toFixed(0)}px;--r:${R(-40,40).toFixed(0)}deg;--d:${R(6,11).toFixed(1)}s;--c:${i===1?"#c9a35b":"#1f7a6d"}`;d.appendChild(l)}
+    for(let i=0;i<7;i++){const s=document.createElement("i");s.className="star";s.innerHTML=star;
+      s.style.cssText=`left:${R(4,94)}%;top:${R(4,94)}%;--d:${R(2,4).toFixed(1)}s;--dl:${(-R(0,3)).toFixed(1)}s`;d.appendChild(s)}
+  });
+})();
 
 /* apertura */
 document.body.style.overflow='hidden';
